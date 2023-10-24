@@ -65,5 +65,17 @@ function gameOver(a) {
     let div = document.createElement("div");
     div.className = "alert";
     div.innerHTML = gameOverAlertElement;
-    document.getlementby
+    document.getElementsByTagName("body")[0].appendChild(div);
+    window.isGameOver = true;
+    moves = 0;
+}
+
+function draw() {
+    let drawAlertElement = `<b>DRAW</b><br><br>` + restartButton;
+    let div = document.createElement("div");
+    div.className = "alert";
+    div.innerHTML = drawAlertElement;
+    document.getElementsByTagName("body")[0].appendChild(div);
+    window.isGameOver = true;
+    moves = 0;
 }
