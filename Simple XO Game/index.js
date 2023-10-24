@@ -10,8 +10,11 @@ function play(y) {
         y.innerHTML = playerTurn;
         y.dataset.player = playerTurn;
         moves++;
-    } else if (playerTurn == "0") {
-        playerTurn = "x";
+        if (playerTurn == "x") {
+            playerTurn = "o";
+        } else if(playerTurn == "o") {
+            playerTurn = "x";
+        }
     }
 
     /* Win Types */
