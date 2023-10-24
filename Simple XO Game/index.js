@@ -1,4 +1,4 @@
-let playerTurn, moves, isGameOver, span, restartButton;
+var playerTurn, moves, isGameOver, span, restartButton;
 playerTurn = "x";
 moves = 0;
 isGameOver = false;
@@ -12,12 +12,13 @@ function play(y) {
         moves++;
         if (playerTurn == "x") {
             playerTurn = "o";
-        } else if(playerTurn == "o") {
+        } else if (playerTurn == "o") {
             playerTurn = "x";
         }
     }
 
     /* Win Types */
+
     checkWinner(1, 2, 3);
     checkWinner(4, 5, 6);
     checkWinner(7, 8, 9);
@@ -29,9 +30,8 @@ function play(y) {
 
     /* No Winner */
 
-    if (moves == 9 && isGameOver == false) {
-        draw();
-    }
+    if (moves == 9 && isGameOver == false) { draw(); }
+
 }
 
 function checkWinner(a, b, c) {
@@ -39,9 +39,9 @@ function checkWinner(a, b, c) {
     b--;
     c--;
     if ((span[a].dataset.player === span[b].dataset.player) && (span[b].dataset.player === span[c].dataset.player) && (span[a].dataset.player === span[c].dataset.player) && (span[a].dataset.player === "x" || span[a].dataset.player === "o") && isGameOver == false) {
-        span[a].parentNode.className += "activeBox";
-        span[b].parentNode.className += "activeBox";
-        span[c].parentNode.className += "activeBox";
+        span[a].parentNode.className += " activeBox";
+        span[b].parentNode.className += " activeBox";
+        span[c].parentNode.className += " activeBox";
         gameOver(a);
     }
 }
@@ -50,8 +50,8 @@ function playAgain() {
     document.getElementsByClassName("alert")[0].parentNode.removeChild(document.getElementsByClassName("alert")[0]);
     resetGame();
     window.isGameOver = false;
-    for (let k = 0; k < span.length; k++) {
-        span[k].parantNode.className = span[k].parentNode.className.replace("activeBox", "");
+    for (var k = 0; k < span.length; k++) {
+        span[k].parentNode.className = span[k].parentNode.className.replace("activeBox", "");
     }
 }
 
@@ -64,8 +64,8 @@ function resetGame() {
 }
 
 function gameOver(a) {
-    let gameOverAlertElement = "<b>Game Over</b><br><br>Player" + span[a].dataset.player.toUpperCase();
-    let div = document.createElement("div");
+    var gameOverAlertElement = "<b>GAME OVER </b><br><br> Player " + span[a].dataset.player.toUpperCase() + ' Win !!! <br><br>' + restartButton;
+    var div = document.createElement("div");
     div.className = "alert";
     div.innerHTML = gameOverAlertElement;
     document.getElementsByTagName("body")[0].appendChild(div);
@@ -74,8 +74,8 @@ function gameOver(a) {
 }
 
 function draw() {
-    let drawAlertElement = `<b>DRAW</b><br><br>` + restartButton;
-    let div = document.createElement("div");
+    var drawAlertElement = '<b>DRAW!!!</b><br><br>' + restartButton;
+    var div = document.createElement("div");
     div.className = "alert";
     div.innerHTML = drawAlertElement;
     document.getElementsByTagName("body")[0].appendChild(div);
