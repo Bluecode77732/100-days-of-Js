@@ -43,3 +43,16 @@ body {
     transform-style: preserve-3d;
 }
 
+.tails {
+    transform: rotateX(180deg);
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-between;
+}
+
+.coin {
+    width: 145px;
+}
+
