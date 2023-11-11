@@ -52,7 +52,15 @@ body {
     justify-content: space-between;
 }
 
-.coin {
+.coin img{
     width: 145px;
+}
+
+.head, .tails {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
 }
 
