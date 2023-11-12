@@ -56,7 +56,7 @@ body {
     width: 145px;
 }
 
-.head, .tails {
+.heads, .tails {
     position: absolute;
     width: 100%;
     height: 100%;
