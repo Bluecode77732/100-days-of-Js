@@ -64,3 +64,42 @@ body {
     -webkit-backface-visibility: hidden;
 }
 
+button {
+    width: 120px;
+    padding: 10px 0;
+    border: 2.5px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#flip-button {
+    background: #424ae0;
+    color: #fff;
+}
+
+#flip-button:disabled {
+    background-color: #e1e0ee;
+    color: #101020;
+    border-color: #e1e0ee;
+}
+
+#reset-button {
+    background: #fff;
+    color: #424ae0;
+}
+
+@keyframes spin-tails {
+    0% {
+        transform: rotateX(0);
+    } 100% {
+        transform: rotateX(1980deg);
+    }
+}
+
+@keyframes spin-heads {
+    0% {
+        transform: rotateX(0);
+    } 100% {
+        transform: rotateX(2160deg);
+    }
+}
