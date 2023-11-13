@@ -10,10 +10,10 @@
 
 .div2, p {
     display: flex;
-    display: block;
     display: grid;
-    display: inline;
+    display: block;
+/*  display: inline;
     display: inline-block;
-    display: inline-table;
+    display: inline-table; */
     flex: 1 100%;
 }
