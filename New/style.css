@@ -1,0 +1,19 @@
+*{
+    align-items: center;
+}
+
+.div1 {
+    margin: 20px;
+    padding: 30px;
+    justify-content: center;
+}
+
+.div2, p {
+    display: flex;
+    display: block;
+    display: grid;
+    display: inline;
+    display: inline-block;
+    display: inline-table;
+    flex: 1 100%;
+}
