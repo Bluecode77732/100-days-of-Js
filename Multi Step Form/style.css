@@ -73,3 +73,20 @@ form button {
     font-size: 0.8em;
 }
 
+#form2 {
+    left: 450px;
+}
+
+#form3 {
+    left: 450px;
+}
+
+.step-row {
+    width: 360;
+    height: 40px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 -1px 5px -1px #000;
+    position: relative;
+}
