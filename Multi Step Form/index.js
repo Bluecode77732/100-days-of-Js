@@ -7,4 +7,5 @@ let back1 = document.getElementById("back1");
 let back2 = document.getElementById("back2");
 let progress = document.getElementById("progress");
 
-next1.
+//How do they have the 'next1'(getting the specific element from html) and append onclick function?
+next1
