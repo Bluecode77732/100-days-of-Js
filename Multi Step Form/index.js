@@ -8,4 +8,5 @@ let back2 = document.getElementById("back2");
 let progress = document.getElementById("progress");
 
 //How do they have the 'next1'(getting the specific element from html) and append onclick function?
-next1
+//Just found out 'word wrap' from View in VScode.
+next1 
