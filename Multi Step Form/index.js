@@ -9,6 +9,8 @@ let progress = document.getElementById("progress");
 
 //How do they have the 'next1'(getting the specific element from html) and append onclick function?
 //Just found out 'word wrap' from View in VScode.
+
+//ON MY WAY BACK HOME I ALREADY FINISHED THIS PROJECT BUT DIDN'T HAVE WIFI WITH MY LAPTOP SO I WILL UPDATE THE CODES TOMORROW.
 next1.onclick() = function() {
     form1.style.left = "-450px";
     form2.style.left = "40px";
