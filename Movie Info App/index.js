@@ -39,8 +39,17 @@ let getMovie = () => {
             `;
             }
             
-
+            //If movie doesn't exist in db
+            else {
+                result.innerHTML = `<h3 class="msg">${data.Error}</h3>`
+            }
+        })
+        //If error occurs
+        .catch(() => {
+            result.innerHTML = `<h3 class="msg">Error Occured</h3>`
         });
     }
-
 }
+
+searchBtn.addEventListener('click', getMovie);
+window.addEventListener('load', getMovie);
