@@ -36,7 +36,7 @@ let getMovie = () => {
                 <p>${data.Plot}</p>
                 <h3>Cast:</h3></h3>
                 <p>${data.Actors}</p>
-            `;
+                `;
             }
             
             //If movie doesn't exist in db
