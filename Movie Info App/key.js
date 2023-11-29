@@ -1,1 +1,1 @@
-key = 
+key = "API key";
