@@ -26,5 +26,24 @@ const renderNewQuote = async () => {
 userInput.addEventListener("input", () => {
     let quoteChars = document.querySelectorAll(".quote-chars");
     quoteChars = Array.from(quoteChars);
+
+    //Array of user input chars
+    let userInputChars = userInput.value.split("");
+    //Loop through each char in quote
+    quoteChars.forEach((char, index) => {
+        //check chars with quote chars
+        if(char.innerHTML == userInputChars[index]) {
+            char.classList.add("success");
+        }
+        //If user hasn't entered anything or backspaced
+        else if(userInputChars[char] == null) {
+            if(char.classList.contains("success")) {
+                char.classList.remove("success");
+            } else {
+                char.classList.remove("fail");
+            }
+        }
+        //
+    });
 });
 
