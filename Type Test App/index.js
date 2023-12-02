@@ -43,7 +43,25 @@ userInput.addEventListener("input", () => {
                 char.classList.remove("fail");
             }
         }
-        //
+        //if user entered wrong char
+        else {
+            if(!char.classList.contains("fail")) {
+                //increament and displaying mistakes
+                mistakes++;
+                char.classList.add("fail");
+            }
+            document.getElementById("mistakes").innerText = mistakes;
+        }
+
+        //Return 'true' if all chars are correct
+        let check = quoteChars.every((element) => {
+            return element.classList.contains("success");
+        });
+
+        //End test if all chars are correct
+        if(check) {
+            displayResult();
+        }
     });
 });
 
