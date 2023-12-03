@@ -65,3 +65,51 @@ userInput.addEventListener("input", () => {
     });
 });
 
+//Update timer
+function updateTimer() {
+    if(time == 0) {
+        //End test if reaches 0
+        displayResult();
+    } else {
+        document.getElementById("timer").innerHTML = --time + "s";
+    }
+}
+
+//Set timer
+const timeReduce = () => {
+    time = 60; 
+    timer = setInterval(updateTimer, 1000);
+}
+
+//End test
+const displayResult = () => {
+    //Display result div
+    document.querySelector(".result").style.display = "block";
+    clearInterval(timer);
+    document.getElementById("stop-test").style.display = "none";
+    userInput.disabled = true;
+    let timeTaken = 1;
+    if(time != 0) {
+        timeTaken = (60 - time) / 100;
+    }
+    document.getElementById("wps").innerText = (userInput.value.length / 5 / timeTaken).toFixed(2) + "wpm";
+    document.getElementById("accuracy").innerText = Math.round(((userInput.value.length - mistakes) / userInput.value.length) * 100) + "%";
+}
+
+//Start test
+const startTest = () => {
+    mistakes = 0;
+    timer = "";
+    userInput.disabled = false;
+    timeReduce();
+    document.getElementById("start-test").style.display = "none";
+    document.getElementById("stop-test").style.display = "block";
+}
+
+window.onload = () => {
+    userInput.value = "";
+    document.getElementById("start-test").style.display = "block";
+    document.getElementById("stop-test").style.display = "none";
+    userInput.disabled = true;
+    renderNewQuote();
+}
