@@ -59,7 +59,7 @@ button {
 
 .result {
     margin-top: 40px;
-    /* display: none; */
+    display: none;
 }
 
 .result h3 {
