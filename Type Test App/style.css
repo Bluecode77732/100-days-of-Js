@@ -84,3 +84,7 @@ button {
 .fail {
     color: #e81c4e;
 }
+
+.unselectable {
+    user-select: none;
+}
