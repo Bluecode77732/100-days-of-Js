@@ -36,7 +36,7 @@ userInput.addEventListener("input", () => {
             char.classList.add("success");
         }
         //If user hasn't entered anything or backspaced
-        else if(userInputChars[char] == null) {
+        else if(userInputChars[index] == null) {
             if(char.classList.contains("success")) {
                 char.classList.remove("success");
             } else {

@@ -14,7 +14,7 @@ body {
 .container {
     width: 80vh;
     padding: 50px 30px;
-    background-color: #fff;
+    background-color: darkgreen;
     position: absolute;
     transform: translate(-50%, -50%);
     top: 50%;
@@ -85,6 +85,7 @@ button {
     color: #e81c4e;
 }
 
-.unselectable {
+/* .unselectable {
     user-select: none;
 }
+ */
