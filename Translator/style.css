@@ -16,3 +16,54 @@ body {
     background: #06283d;
 }
 
+.container {
+    max-width: 690px;
+    width: 100px;
+    padding: 30px;
+    background: #fff;
+    border-radius: 7px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.wrapper {
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.wrapper .text-input {
+    display: flex;
+    border-bottom: 1px solid #ccc;
+}
+
+.text-input .to-text {
+    border-radius: 0px;
+    border-left: 1px solid #ccc;
+}
+
+.text-input textarea {
+    height: 250px;
+    width: 100%;
+    border: 0;
+    outline: 0;
+    resize: 0;
+    background: 0;
+    font-size: 18px;
+    padding: 10px 15px;
+    border-radius: 5px;
+}
+
+.text-input textarea::placeholder {
+    color: #b7b6b6;
+}
+
+.controls, .li, .icons, .icons i {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.controls {
+    list-style: none;
+    padding: 12px 15px;
+}
+
