@@ -80,3 +80,46 @@ body {
     justify-content: center;
 }
 
+.controls .row.from .icons {
+    padding-left: 15px;
+    border-left: 1px solid #ccc;
+}
+
+.controls .row.to .icons {
+    padding-left: 15px;
+    border-left: 1px solid #ccc;
+}
+
+.controls .row select {
+    color: #333;
+    border: none;
+    outline: none;
+    font-size: 18px;
+    background: none;
+    padding-left: 5px;
+}
+
+.text-input textarea::-webkit-scrollbar {
+    width: 4px;
+}
+
+.text-input .row select::-webkit-scrollbar {
+    width: 8px;
+}
+
+.text-input textarea::-webkit-scrollbar-track, 
+.controls .row select::-webkit-scrollbar-track {
+    background: #fff;
+}
+
+.text-input textarea::-webkit-scrollbar-thumb {
+    background: #ddd;
+    border-radius: 8px;
+}
+
+.text-input textarea::-webkit-scrollbar-thumb {
+    background: #999;
+    border-radius: 8px;
+    border-right: 2px solid #ffffff;
+}
+
