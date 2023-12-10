@@ -123,3 +123,62 @@ body {
     border-right: 2px solid #ffffff;
 }
 
+.controls .exchange {
+    color: #adadad;
+    cursor: pointer;
+    font-size: 16px;
+    transition: transform 0.2s ease;
+}
+
+.controls i:active {
+    transform: scale(0.9);
+}
+
+.container button {
+    width: 100%; /* 390px */
+    padding: 14px;
+    outline: none;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    margin-top: 20px;
+    font-size: 17px;
+    border-radius: 10px;
+    background-color: #061;
+}
+
+@media (max-width:660px) {
+    .container {
+        padding: 20px;
+    }
+
+    .wrapper .text-input {
+        flex-direction: column;
+    }
+
+    .text-input .to-text {
+        border-left: 0px;
+        border-top: 1px solid #ccc;
+    }
+
+    .text-input textarea {
+        height: 200px;
+    }
+
+    .controls .row .icons {
+        display: none;
+    }
+
+    .container button {
+        padding: 20px;
+        font-size: 16px;
+    }
+
+    .controls .row select {
+        font-size: 16px;
+    }
+
+    .controls .exchange {
+        font-size: 14px;
+    }
+}
