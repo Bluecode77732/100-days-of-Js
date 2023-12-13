@@ -34,15 +34,15 @@ translateBtn.addEventListener("click", () => {
         translateFrom = selectTag[0].value,
         translateTo = selectTag[1].value;
     if(!text) return;
-    /* Need more 'setAttribute' examples */
+    // Need to check more of 'setAttribute' examples 
     toText.setAttribute("placeholder", "Translating...");
     let apiUrl = `https://api.mymemory.translated.net/get?q=${text}&langpair=${translateFrom}|${translateTo}`
     fetch(apiUrl).then(res => res.json()).then(data => {
         toText.value = data.responseData.translatedText;
         //What is this matches meaning?
         data.matches.forEach(data => {
-            if(data.id === 0) {
-                toText.value = data.translationl;
+            if(data.id === 0) { //The id from html data attribute?
+                toText.value = data.translation; //Where is the translation at in data?
             }
         });
         toText.setAttribute("placeholder", "Translation");
