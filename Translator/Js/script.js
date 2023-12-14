@@ -39,10 +39,10 @@ translateBtn.addEventListener("click", () => {
     let apiUrl = `https://api.mymemory.translated.net/get?q=${text}&langpair=${translateFrom}|${translateTo}`
     fetch(apiUrl).then(res => res.json()).then(data => {
         toText.value = data.responseData.translatedText;
-        //What is this matches meaning?
+        //What is this 'matches' meaning?
         data.matches.forEach(data => {
-            if(data.id === 0) { //The id from html data attribute?
-                toText.value = data.translation; //Where is the translation at in data?
+            if(data.id === 0) { //The 'id' from html data attribute?
+                toText.value = data.translation; //Where is the 'translation' at in 'data'?
             }
         });
         toText.setAttribute("placeholder", "Translation");
@@ -51,6 +51,23 @@ translateBtn.addEventListener("click", () => {
 
 icons.forEach(icons => {
     icons.addEventListener("click", ({ target }) => {
-        if()
-    })
-})
+        if(!fromText.value || !toText.value) return;
+        if(target.classList.contains("fa-copy")) {
+            if(target.id == "from") {
+                navigator.clipboard.writeText(fromText.value);
+            } else {
+                navigator.clipboard.writeText(toText.value);
+            }
+        } else {
+            let utterance;
+            if(target.id == "from") {
+                utterance = new SpeechSynthesisUtterance(fromText);
+                utterance.lang = selectTag[0].value;    //the 'lang' property comes after when the 'SpeechSynthesisUtterance' been contained in.
+            } else {
+                utterance = new SpeechSynthesisUtterance(toText.value);
+                utterance.lang = selectTag[1].value;
+            }
+            speechSynthesis.speak(utterance);
+        }
+    });
+});
