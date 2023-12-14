@@ -49,3 +49,8 @@ translateBtn.addEventListener("click", () => {
     });
 }); 
 
+icons.forEach(icons => {
+    icons.addEventListener("click", ({ target }) => {
+        if()
+    })
+})
