@@ -56,7 +56,7 @@ body {
     color: #b7b6b6;
 }
 
-.controls, .li, .icons, .icons i {
+.controls, li, .icons, .icons i {
     display: flex;
     align-items: center;
     justify-content: space-around;
@@ -103,7 +103,7 @@ body {
     width: 4px;
 }
 
-.text-input .row select::-webkit-scrollbar {
+.controls .row select::-webkit-scrollbar {
     width: 8px;
 }
 
@@ -117,7 +117,7 @@ body {
     border-radius: 8px;
 }
 
-.text-input textarea::-webkit-scrollbar-thumb {
+.controls .row select::-webkit-scrollbar-thumb {
     background: #999;
     border-radius: 8px;
     border-right: 2px solid #ffffff;
