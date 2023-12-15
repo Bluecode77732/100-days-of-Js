@@ -71,3 +71,4 @@ icons.forEach(icons => {
         }
     });
 });
+    
