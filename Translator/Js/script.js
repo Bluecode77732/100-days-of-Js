@@ -6,9 +6,9 @@ const icons = document.querySelector('.row i');
 const translateBtn = document.querySelector("button");
 
 selectTag.forEach((tag, id) => {
-    for(let country_code in countries) {
+    for(let country_code in langs) {
         let selected = id == 0 ? country_code == "en-GB" ? "selected" : "" : country_code == "de-DE" ? "selected" : "";
-        let option = `<option ${selected} value="${country_code}">${countries[country_code]}</option>`;
+        let option = `<option ${selected} value="${country_code}">${langs[country_code]}</option>`;
         tag.insertAdjacentHTML("beforeend", option);
     }
 });
@@ -49,8 +49,8 @@ translateBtn.addEventListener("click", () => {
     });
 }); 
 
-icons.forEach(icons => {
-    icons.addEventListener("click", ({ target }) => {
+icons.forEach(icon => {
+    icon.addEventListener("click", ({ target }) => {
         if(!fromText.value || !toText.value) return;
         if(target.classList.contains("fa-copy")) {
             if(target.id == "from") {
@@ -61,7 +61,7 @@ icons.forEach(icons => {
         } else {
             let utterance;
             if(target.id == "from") {
-                utterance = new SpeechSynthesisUtterance(fromText);
+                utterance = new SpeechSynthesisUtterance(fromText.value);
                 utterance.lang = selectTag[0].value;    //the 'lang' property comes after when the 'SpeechSynthesisUtterance' been contained in.
             } else {
                 utterance = new SpeechSynthesisUtterance(toText.value);
