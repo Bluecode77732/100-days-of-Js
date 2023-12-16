@@ -43,10 +43,10 @@ body {
 .text-input textarea {
     height: 250px;
     width: 100%;
-    border: 0;
-    outline: 0;
-    resize: 0;
-    background: 0;
+    border: none;
+    outline: none;
+    resize: none;
+    background: none;
     font-size: 18px;
     padding: 10px 15px;
     border-radius: 5px;
@@ -170,7 +170,7 @@ body {
     }
 
     .container button {
-        padding: 20px;
+        padding: 13px;
         font-size: 16px;
     }
 
