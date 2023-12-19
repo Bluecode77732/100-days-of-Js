@@ -1,5 +1,5 @@
 fetch(
-  `https://api.coingecko.com/api/v3/simple/price?ids=bitcoin%2C%20tether%2C%20ethereum%2C%20litecoin%2C%20cardano%2C%20dogecoin&vs_currencies=usd&include_24hr_change=true`
+  'https://api.coingecko.com/api/v3/simple/price?ids=bitcoin%2Ctether%2Cethereum%2Clitecoin%2Ccardano%2Cdogecoin%2Cdogecoing&vs_currencies=usd&include_24hr_change=true'
 )
   .then(res => res.json())
   .then(json => {
@@ -14,7 +14,7 @@ fetch(
       container.innerHTML += `
         <div class="coin ${change < 0 ? 'falling' : 'rising'}">
           <div class="coin-logo">
-            <img src="images/${coin}.png">
+            <img src="C:/Users/Administrator/Documents/VScode/100 days of JS/Crypto Price App/images/images/${coin}.png">
           </div>
           <div class="coin-name">
             <h3>${coin}</h3>
