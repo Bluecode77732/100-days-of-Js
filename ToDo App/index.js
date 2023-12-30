@@ -46,8 +46,8 @@ function showToDo(filter) {
 showToDo("all");
 
 function showMenu(selectedTask) {
-    let menuDiv = selectedTask.parentElement.lastElementChild;
-    menuDiv.classList.add("show");
+    let menuDiv = selectedTask.parentElement.lastElementChild;  /* The 'parentElement' returns the parent property of the specified element.*/ /* The 'lastElementChild' property returns the last child element of an element. */ 
+    menuDiv.classList.add("show");  /* The 'ClassList' property returns the CSS classnames of an element. */
     document.addEventListener("click", e => {
         if(e.target.tagName != "1" || e.target != selectedTask) {
             menuDiv.classList.remove("show");
