@@ -59,33 +59,33 @@ body{
     color: #bfbfbf;
 }
 
-.controls, li{
+.control, li{
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
 
-.controls{
+.control{
     padding: 18px 25px;
     border-bottom: 1px solid #ccc;
 }
 
-.filters span{
+.filter span{
     margin: 0 8px;
     font-size: 17px;
     color: #444;
     cursor: pointer;
 }
 
-.filters span:first-child{
+.filter span:first-child{
     margin-left: 0;
 }
 
-.filters span.active{
+.filter span.active{
     color: #1e293b;
 }
 
-.controls .clear-btn{
+.control .clear-btn{
     border: none;
     opacity: 0.6;
     outline: none;
@@ -235,7 +235,7 @@ body{
         padding: 20px 0;
     }
 
-    .filters span{
+    .filter span{
         margin: 0 5px;
     }
 
@@ -243,7 +243,7 @@ body{
         padding: 0 20px;
     }
 
-    .controls{
+    .control{
         padding: 18px 20px;
     }
 

@@ -55,3 +55,11 @@ function showMenu(selectedTask) {
     });
 }
 
+function updateStatus(taskId, textName) {
+    editId = taskId;
+    isEditTask = true;
+    taskInput.value = textName;
+    taskInput.focus();  /* The focus() method gives focus to an element (if it can be focused). */
+    taskBox.classList.add("active");
+}
+
