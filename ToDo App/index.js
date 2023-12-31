@@ -55,7 +55,19 @@ function showMenu(selectedTask) {
     });
 }
 
-function updateStatus(taskId, textName) {
+function updateStatus(selectedTask) {
+    let taskName = selectedTask.parentElement.lastElementChild;
+    if(selectedTask.checked) {
+        taskName.classList.add("checked");
+        todos[selectedTask.id].status = "completed";
+    } else {
+        taskName.classList.remove("checked");
+        todos[selectedTask.id].status = "pending";
+    }
+    localStorage.setItem("todo-list", JSON.stringify(todos));
+}
+
+function editTask(taskId, textName) {
     editId = taskId;
     isEditTask = true;
     taskInput.value = textName;
