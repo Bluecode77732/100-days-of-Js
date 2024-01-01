@@ -89,7 +89,7 @@ clearAll.addEventListener("click", () => {
     showToDo();
 });
 
-task.addEventListener("keyup", e => {
+taskInput.addEventListener("keyup", e => {
     let userTask = taskInput.value.trim(); /* What values are these? */
     if(e.key == "Enter" && userTask) {
         if(!isEditTask) {
