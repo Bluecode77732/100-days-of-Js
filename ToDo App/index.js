@@ -75,3 +75,33 @@ function editTask(taskId, textName) {
     taskBox.classList.add("active");
 }
 
+function deleteTask(deletedId, filter) {
+    isEditTask = false;
+    todos.splice(deletedId, 1); /* is the 'deletedId' array form? My guess is, the 'todos' is stringify method, so it can use the method splice. */
+    localStorage.setItem("todo-list", JSON.stringify(todos));
+    showToDo(filter);
+}
+
+clearAll.addEventListener("click", () => {
+    isEditTask = false;
+    todos.splice(0, todos.length);
+    localStorage.setItem("todo-list", JSON.stringify(todos));
+    showToDo();
+});
+
+task.addEventListener("keyup", e => {
+    let userTask = taskInput.value.trim(); /* What values are these? */
+    if(e.key == "Enter" && userTask) {
+        if(!isEditTask) {
+            todos = !todos ? [] : todos;
+            let taskInfo = { name : userTask, status : "pending"};
+            todos.push(taskInfo);
+        } else {
+            isEditTask = false;
+            todos[editId].name = userTask;
+        }
+        taskInput.value = "";
+        localStorage.setItem("todo-list", JSON.stringify(todos));
+        showToDo(document.querySelector("span.active").id);
+    }
+});
