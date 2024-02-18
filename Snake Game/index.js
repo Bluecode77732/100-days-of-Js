@@ -17,3 +17,4 @@ let highScore = localStorage.getItem("high-score") || 0;
 highScoreElement.innerText = `${highScore}`;
 
 // Pass a random between 1 and 30 as food position
+
