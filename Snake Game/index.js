@@ -18,3 +18,19 @@ highScoreElement.innerText = `${highScore}`;
 
 // Pass a random between 1 and 30 as food position
 
+const updateFoodPosition = () => {
+    foodX = Math.floor(Math.random() * 30) + 1;
+    foodY = Math.floor(Math.random() * 30) + 1;
+}
+
+const handleGameOver = () => {
+    clearInterval(setIntervalId);
+    alert("Game Over! Press OK to replay.");
+    location.reload();
+}
+
+//Change velocity value based on key press
+
+const changeDirection = e => {
+    
+}
