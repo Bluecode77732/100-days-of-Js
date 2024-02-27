@@ -10,9 +10,9 @@
 body {
     display: flex;
     align-items: center;
-    justify-items: center;
+    justify-content: center;
     min-height: 100vh;
-    background: #e3f2fd;
+    background-color: #e3f2fd;
 }
 
 .wrapper {
