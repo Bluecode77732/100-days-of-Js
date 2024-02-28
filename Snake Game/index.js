@@ -1,7 +1,7 @@
 const playBoard = document.querySelector(".play-board");
 const scoreElement = document.querySelector(".score");
 const highScoreElement = document.querySelector(".high-score");
-const controls = document.querySelector(".controls i");
+const control = document.querySelector(".controls i");
 
 let gameOver = false;
 let foodX, foodY;
@@ -47,4 +47,35 @@ const changeDirection = e =>  {
     }
 }
 
-// Change Direction on each key click
+//Change Direction on each key click.
+
+/* control.forEach(button => button.addEnventListener() { }); */
+
+const initGame = () => {
+    if(gameOver) 
+    return handleGameOver;
+
+    let html = `<div class="food" style="grid-area : ${foodY} / ${foodX}"></div>`;
+    //When the snake eat food
+    if(snakeX === foodX && snakeY === foodY) {
+        updateFoodPosition();
+        snakeBody.push([foodY, foodX]); //It adds food into the snake body array.
+        score++;
+        highScore = score >= highScore ? score : highScore // if score > high score => high score = score
+
+        localStorage.setItem("high-score", highScore);
+        scoreElement.innerText = `Score : ${score}`;
+        highScoreElement.innerText = `Score : ${highScore}`;
+    }
+
+    
+}
+
+
+
+
+
+
+
+
+
