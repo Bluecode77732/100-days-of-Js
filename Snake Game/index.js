@@ -65,7 +65,23 @@ const initGame = () => {
 
         localStorage.setItem("high-score", highScore);
         scoreElement.innerText = `Score : ${score}`;
-        highScoreElement.innerText = `Score : ${highScore}`;
+        highScoreElement.innerText = `High Score : ${highScore}`;
+    }
+
+    //Update snake head.
+    snakeX += velocityX;
+    snakeY += velocityY;
+
+    //Shfting forward values of elements in snake body by one.
+    for (let i = snakeBody.length; i > 0; i--) {
+        snakeBody[i] = snakeBody[i - 1];
+    } 
+
+    snakeBody[0] = [snakeX, snakeY];
+
+    //Check whether snake body is out of wall.
+    if(snakeX <= 0 || snakeX > 30 || snakeY <= 0 || snakeY > 30) {
+        return gameOver();
     }
 
     
