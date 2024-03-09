@@ -67,7 +67,7 @@ body {
     border-right: 1px solid #181b26;
 }
 
-@media screen and (max-width: 800px) {  /* what is screen? */
+@media screen and (max-width: 800px) {  /* what is screen? this is the technique for delivering a tailored style sheet (responsive web design) to desktops, laptops, tablets, and mobile phones. */
     .wrapper{
         width: 90vmin;
         height: 115vmin;
