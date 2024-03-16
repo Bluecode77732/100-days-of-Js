@@ -10,3 +10,21 @@ body {
     /* background: #f7f9fd; */
 }
 
+.wrapper {
+    width : 90%;
+    font-style: 16px;
+    max-width: 43.753em;
+    margin: 1em auto;
+}
+
+.container {
+    width: 100%;
+}
+
+.sub-container {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 2fr 2fr; /* Is it width to height? */
+    gap: 3em;
+}
+
