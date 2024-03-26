@@ -63,10 +63,18 @@ const listCreator = (expenseName, expenseValue) => {
     subListContent.classList.add("sublist-content", "flex-space");
     list.appendChild(subListContent);
     subListContent.innerHTML = `<p class="product">${expenseName}</p><p class="amount">${expenseValue}</p>`
+    
     let editButton = document.createElement("button");
     editButton.classList.add("fa-solid", "fa-pen-to-square", "edit")  //what is this for?
     editButton.style.fontSize = "1.2em";
     editButton.addEventListener("click", () => {
+        modifyElement(editButton, true);
+    });
+    
+    let deleteButton = document.createElement("button");
+    deleteButton.classList.add("fa-solid", "fa-trash-can", "delete");
+    deleteButton.style.fontSize = "1.2em";
+    deleteButton.addEventListener("click", () => {
         modifyElement(editButton, true);
     });
 }
