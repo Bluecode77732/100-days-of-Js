@@ -56,3 +56,17 @@ const modifyElement = (elem, edit = false) => {
     expenditureValue.innerText = parseInt(currentExpense) 
 }
 
+// Create list function
+
+const listCreator = (expenseName, expenseValue) => {
+    let subListContent = document.createElement("div"); // I am Finally using createDiv which wanted to know.
+    subListContent.classList.add("sublist-content", "flex-space");
+    list.appendChild(subListContent);
+    subListContent.innerHTML = `<p class="product">${expenseName}</p><p class="amount">${expenseValue}</p>`
+    let editButton = document.createElement("button");
+    editButton.classList.add("fa-solid", "fa-pen-to-square", "edit")  //what is this for?
+    editButton.style.fontSize = "1.2em";
+    editButton.addEventListener("click", () => {
+        modifyElement(editButton, true);
+    });
+}
