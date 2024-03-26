@@ -75,6 +75,9 @@ const listCreator = (expenseName, expenseValue) => {
     deleteButton.classList.add("fa-solid", "fa-trash-can", "delete");
     deleteButton.style.fontSize = "1.2em";
     deleteButton.addEventListener("click", () => {
-        modifyElement(editButton, true);
+        modifyElement(deleteButton);
     });
+    subListContent.appendChild(editButton);
+    subListContent.appendChild(deleteButton);
+    document.getElementById("list").appendChild(subListContent);
 }
