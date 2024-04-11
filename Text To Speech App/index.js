@@ -33,6 +33,15 @@ speechBtn.addEventListener("click", (e) => {
         if(!synth.speaking) {
             textToSpeech(textarea.value);
         }
-        
+        //If text was long, Add Resume and Pause Functions.
+        if(textarea.value.length > 80) {
+            setInterval(() => {
+                if(!synth.speaking && !isSpeakig) {
+                    isSpeakig = true;
+                    speechBtn.innerText = "Convert To Speech";
+                } else { }
+            }, 500);
+            
+        }
     }
 });
