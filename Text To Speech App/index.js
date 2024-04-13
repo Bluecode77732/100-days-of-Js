@@ -4,13 +4,13 @@ const textarea = document.querySelector("textarea"),
 
 let synth = speechSynthesis, isSpeakig = true;
 
-
+voices();
 
 function voices() {
     for(let voice of synth.getVoices()) {
         let selected = voice.name === "Google US English" ? "Selected" : "";
         let option = `<option value="${voice.name}" ${selected}> ${voice.name} (${voice.lang})</option>`;
-        voiceList.insertAdjacentHTML("beforeend");
+        voiceList.insertAdjacentHTML("beforeend", option);
     }
 }
 
@@ -41,7 +41,17 @@ speechBtn.addEventListener("click", (e) => {
                     speechBtn.innerText = "Convert To Speech";
                 } else { }
             }, 500);
-            
+            if(isSpeakig) {
+                synth.resume();
+                isSpeakig = false;
+                speechBtn.innerText = "Pause Speech";
+            } else {
+                synth.pause();
+                isSpeakig = true;
+                speechBtn.innerText = "Resume Speech";
+            }
+        } else {
+            speechBtn.innerText = "Convert To Speech";
         }
     }
 });
