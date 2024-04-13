@@ -1,26 +1,40 @@
+// Amount
 let totalAmount = document.getElementById("total-amount");
 let userAmount = document.getElementById("user-amount");
+
+// Button
 const checkAmountButton = document.getElementById("check-amount");
 const totalAmountButton = document.getElementById("total-amount-button");
+
+// Product
 const productTitle = document.getElementById("product-title");
+
+// Error
 const errorMessage = document.getElementById("budget-error");
 const productTitleError = document.getElementById("product-title-error");
 const productCostError = document.getElementById("product-cost-error");
+
+// Value
 const amount = document.getElementById("amount");
 const expenditureValue = document.getElementById("expenditure-value");
 const balanceValue = document.getElementById("balance-amount");
+
+// List
 const list = document.getElementById("list");
+
+// Temporal amount
 let tempAmount = 0;
+
 
 //Set Budget function
 
-totalAmount.addEventListener("click", () => {
-    tempAmount = totalAmount.value();
+totalAmountButton.addEventListener("click", () => {
+    tempAmount = totalAmount.value;
     //Bad input
     if (tempAmount === "" || tempAmount < 0) {
-        errorMessage.classList.remove("hide");
+        (document.getElementById("budget-error")).classList.remove("hide");
     } else {
-        errorMessage.classList.add("hide");
+        (document.getElementById("budget-error")).classList.add("hide");
         //Set budget
         amount.innerHTML = tempAmount;
         balanceValue.innerText = tempAmount - expenditureValue.innerText;
@@ -53,7 +67,8 @@ const modifyElement = (elem, edit = false) => {
     }
 
     balanceValue.innerText = parseInt(currentBalance) + parseInt(parentAmount);
-    expenditureValue.innerText = parseInt(currentExpense) 
+    expenditureValue.innerText = parseInt(currentExpense) - parseInt(parentAmount);
+    parentDiv.remove();
 }
 
 // Create list function
