@@ -92,6 +92,7 @@ const listCreator = (expenseName, expenseValue) => {
     deleteButton.addEventListener("click", () => {
         modifyElement(deleteButton);
     });
+    
     subListContent.appendChild(editButton);
     subListContent.appendChild(deleteButton);
     document.getElementById("list").appendChild(subListContent);
