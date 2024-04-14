@@ -5,5 +5,9 @@ const infoText = document.querySelector("p");
 const closeBtn = document.querySelector(".close");
 const copyBtn = document.querySelector(".copy");
 
-// 
+// Fetch Data from the Application Program Interface
 
+function fetchReq(file, formFata) {
+    infoText.innerText = "Scanning QR Code...";
+    fetch("")
+}
