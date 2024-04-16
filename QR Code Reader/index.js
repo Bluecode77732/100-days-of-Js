@@ -9,7 +9,7 @@ const copyBtn = document.querySelector(".copy");
 
 function fetchReq(file, formData) {
     infoText.innerText = "Scanning QR Code...";
-    fetch("http://api.qrserver.com/v1/create-qr-code/?", {
+    fetch("http://api.qrserver.com/v1/create-qr-code/", {
         method: "POST",
         body: formData,
     })
