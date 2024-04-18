@@ -37,7 +37,7 @@ body {
   user-select: none;
   text-align: center;
   border-radius: 7px;
-  background: #fff; /* The bg was this was problem! */
+  background: #fff;   /* The bg was this was problem! */
   align-items: center;
   justify-content: center;
   transition: all 0.2s ease;
@@ -63,7 +63,7 @@ form img {
 
 form .content i {
   color: #334155;
-  font-style: 55px;
+  font-size: 55px;
 }
 
 form .content p {
@@ -143,6 +143,7 @@ textarea:hover::-webkit-scrollbar-thumb {
     padding: 25px;
     height: 260px;
   }
+
   .wrapper .active {
     height: 520px;
   }
