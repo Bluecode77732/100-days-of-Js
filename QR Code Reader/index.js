@@ -1,6 +1,6 @@
 const wrapper = document.querySelector(".wrapper");
 const form = document.querySelector("form");
-const FileInp = document.querySelector("input");
+const fileInp = document.querySelector("input");
 const infoText = document.querySelector("p");
 const closeBtn = document.querySelector(".close");
 const copyBtn = document.querySelector(".copy");
@@ -13,13 +13,15 @@ function fetchReq(file, formData) {
         method: "POST",
         body: formData,
     })
-    .then((res) => res.json())
-    .then((result) => {
+        .then(res => res.json())
+        .then(result => {
             result = result[0].symbol[0].data;
             infoText.innerText = result
                 ? "Upload QR Code To Scan"
                 : " Couldn't Scan QR Code";
-            if (!result) return;
+            if (!result) 
+            return;
+
             document.querySelector("textarea").innerText = result;
             form.querySelector("img").src = URL.createObjectURL(file);
             wrapper.classList.add("active");
@@ -31,7 +33,7 @@ function fetchReq(file, formData) {
 
 // Send QR Code file with Request To API
 
-FileInp.addEventListener("change", async e => {
+fileInp.addEventListener("change", async e => {
     let file = e.target.files[0];
     if(!file) return;
     let formData = new FormData();
@@ -49,7 +51,7 @@ copyBtn.addEventListener("click", () => {
 // When user click on 'form' perform 'fileInp' Eventlistener function
 
 form.addEventListener("click", () => {
-    FileInp.click()
+    fileInp.click()
 });
 
 closeBtn.addEventListener("click", () => wrapper.classList.remove("active"));
