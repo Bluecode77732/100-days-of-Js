@@ -12,3 +12,7 @@ function setDirections(value, _this) {
     currentDireciton = value;
 }
 
+function generateCode() {
+    outputCode.value = `background-image : linear-gradient(${currentDireciton}, ${colorOne.value}, ${colorTwo.value})`;
+    
+}
