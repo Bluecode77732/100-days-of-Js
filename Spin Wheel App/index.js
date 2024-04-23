@@ -1,18 +1,15 @@
-let colorOne = document.getElementById("color-a");
-let colorTwo = document.getElementById("color-b");
-let currentDireciton = 'to bottom';
-let outputCode = document.getElementById("code");
+const wheel = document.getElementById("wheel"), 
+    spinBtn = document.getElementById("spin-btn"),
+    finalValue = document.getElementById("final-value");
 
-function setDirections(value, _this) {
-    let directions = document.querySelectorAll(".buttons button");
-    for (const i of directions) {
-        i.classList.remove("active");
-    }
-    _this.classList.add("active")
-    currentDireciton = value;
-}
+// Values of min and max angle for a value
 
-function generateCode() {
-    outputCode.value = `background-image : linear-gradient(${currentDireciton}, ${colorOne.value}, ${colorTwo.value})`;
-    
-}
+const rotationValues = [
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+];
