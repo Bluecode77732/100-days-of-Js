@@ -60,3 +60,13 @@ let myChart = new Chart(wheel, {
     },
 });
 
+// Display value based on randomAngle
+
+const valueGenerator = (angleValue) => {
+    for (const i in rotationValues) {
+        if() {
+            
+        }
+    }
+}
+
