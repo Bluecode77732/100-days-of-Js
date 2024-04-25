@@ -63,10 +63,12 @@ let myChart = new Chart(wheel, {
 // Display value based on randomAngle
 
 const valueGenerator = (angleValue) => {
-    for (const i in rotationValues) {
-        if() {
-            
+    for (const i of rotationValues) {
+        if (angleValue >= i.minDegree && angleValue <= i.maxDegree) {
+            finalValue.innerHTML = `<p>Value: ${i.value}</p>`;
+            spinBtn.disabled = false;
+            break;
         }
     }
-}
+};
 
