@@ -54,7 +54,7 @@ let myChart = new Chart(wheel, {
             datalabels: {
                 color: "#ffffff",
                 formatter: (_, context) => context.Chart.data.labels[context.dataIndex],
-                font: { size: 24 }
+                font: { size: 24 },
             },
         },
     },
@@ -79,5 +79,22 @@ let resultValue = 101;
 spinBtn.addEventListener("click", () => {
     spinBtn.disabled = true;
     finalValue.innerHTML = `<p>Good Luck!</p>`;
-    
+    // Generate random degree to stop at
+    let randomDegree = Math.floor(Math.random() * (355 - 0 + 1) + 0);
+    // Interval for roation animation
+    let rotaionInterval = window.setInterval(() => {
+        myChart.options().rotaion = myChart.options.rotaion + resultValue;
+        myChart.update();
+        // if rotation > 360 reset it back to 0
+        if(myChart.options.rotaion >= 360) {
+            count += 1;
+            resultValue -= 5;
+            myChart.options.rotaion = 0;
+        } else if(count > 15 && myChart.options.rotaion == randomDegree) {
+            valueGenerator(randomDegree);
+            clearInterval(rotaionInterval);
+            count = 0;
+            resultValue = 101;
+        }
+    }, 10);
 });
