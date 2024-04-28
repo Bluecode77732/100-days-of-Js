@@ -85,17 +85,17 @@ spinBtn.addEventListener("click", () => {
     // Generate random degree to stop at
     let randomDegree = Math.floor(Math.random() * (355 - 0 + 1) + 0);
     // Interval for roation animation
-    let rotaionInterval = window.setInterval(() => {
-        myChart.options.rotaion = myChart.options.rotaion + resultValue;
+    let rotationInterval = window.setInterval(() => {
+        myChart.options.rotation = myChart.options.rotation + resultValue;
         myChart.update();
         // if rotation > 360 reset it back to 0
-        if(myChart.options.rotaion >= 360) {
+        if(myChart.options.rotation >= 360) {
             count += 1;
             resultValue -= 5;
-            myChart.options.rotaion = 0;
-        } else if(count > 15 && myChart.options.rotaion == randomDegree) {
+            myChart.options.rotation = 0;
+        } else if(count > 15 && myChart.options.rotation == randomDegree) {
             valueGenerator(randomDegree);
-            clearInterval(rotaionInterval);
+            clearInterval(rotationInterval);
             count = 0;
             resultValue = 101;
         }
