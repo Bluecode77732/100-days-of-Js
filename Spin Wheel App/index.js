@@ -74,8 +74,11 @@ const valueGenerator = (angleValue) => {
 
 // Spinner Count 
 let count = 0; 
+
 // 100 rotation for animation and last rotation for result
 let resultValue = 101;
+
+// Start spinning
 spinBtn.addEventListener("click", () => {
     spinBtn.disabled = true;
     finalValue.innerHTML = `<p>Good Luck!</p>`;
