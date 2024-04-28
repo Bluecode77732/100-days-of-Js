@@ -53,7 +53,7 @@ let myChart = new Chart(wheel, {
             // Show labels inside of pie chart
             datalabels: {
                 color: "#ffffff",
-                formatter: (_, context) => context.Chart.data.labels[context.dataIndex],
+                formatter: (_, context) => context.chart.data.labels[context.dataIndex],
                 font: { size: 24 },
             },
         },
@@ -83,7 +83,7 @@ spinBtn.addEventListener("click", () => {
     let randomDegree = Math.floor(Math.random() * (355 - 0 + 1) + 0);
     // Interval for roation animation
     let rotaionInterval = window.setInterval(() => {
-        myChart.options().rotaion = myChart.options.rotaion + resultValue;
+        myChart.options.rotaion = myChart.options.rotaion + resultValue;
         myChart.update();
         // if rotation > 360 reset it back to 0
         if(myChart.options.rotaion >= 360) {
