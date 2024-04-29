@@ -14,5 +14,13 @@ function setDirections(value, _this) {
 
 function generateCode() {
     outputCode.value = `background-image : linear-gradient(${currentDireciton}, ${colorOne.value}, ${colorTwo.value})`;
-    
+    document.getElementsByTagName("BODY"/* What if it's "body"? */)[0].style.backgroundImage = `linear-gradient(${currentDireciton}, ${colorOne.value}, ${colorTwo.value})`;
 }
+
+function copyText() {
+    outputCode.select();
+    document.execCommand('copy');
+    alert("Gradient Copied!");
+}
+
+generateCode();
