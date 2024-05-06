@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+* {
+    margin: 0;  /* Understood that 'margin: 0' equals to none space gap between the html elements */
+    padding: 0; /* So for this one */
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;    /* height adjustment */
+    justify-content: center;    /* width adjustment */
+    padding: 0px 10px;
+    background-color: #1565c0;
+}
+
+.wrapper {
+    width: 400px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.wrapper h1 {
+    font-size: 22px;
+    text-align: center;
+    font-weight: 500;
+    border-bottom: 2px solid #ccc;
+    margin: 0px 20px;   /* putting margin here? */
+    padding: 20px 25px;
+}
+
+.wrapper .content {
+    margin: 25px 25px 30px;
+}
+
+.wrapper .word {
+    display: flex;
+    flex-wrap: wrap;    /* What's this? */
+    justify-content: center;
+    /* background: green; */
+}
+
+.word input {
+    height: 51px;
+    width: 50px;
+    margin: 4px;
+    color: #0d47a1;
+    border: 1px solid #b5b5b5;
+    background: none;
+    text-align: center;
+    border-radius: 10px;
+    text-transform: uppercase;
+    pointer-events: none;
+    font-size: 22px;
+    font-weight: 500;
+}
+
+.type-input {
+    z-index: -999;  /* Wth is this? */
+    position: absolute;
+    pointer-events: none;
+    opacity: 0;
+}
+
+.wrod input:first-child {   /* Smth new */
+    margin-left: 0;
+}
+
+.content .info {
+    margin: 20px 0px;
+}
+
+.info p{
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.buttons {
+    
+}
