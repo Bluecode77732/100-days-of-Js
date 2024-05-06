@@ -23,7 +23,7 @@ body {
 }
 
 .container *:not(i) {   /* not i? */
-    font-family:  'Rubik', sans-serif;
+    font-family: 'Rubik', sans-serif;
 } 
 
 .colors {
