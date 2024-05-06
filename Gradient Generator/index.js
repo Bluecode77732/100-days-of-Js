@@ -3,7 +3,7 @@ let colorTwo = document.getElementById("color-b");
 let currentDirection = 'to bottom';
 let outputCode = document.getElementById("code");
 
-function setDirections(value, _this) {
+function setDirection(value, _this) {
     let directions = document.querySelectorAll(".buttons button");
     for (const i of directions) {
         i.classList.remove("active");
