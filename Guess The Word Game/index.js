@@ -28,6 +28,32 @@ function startNewGame() {
     guessLeft.innerText = maxGuesses;
     mistakes.innerText = incorrectLetters;
 
-    
+    // Create input for each letter of word
+    input.innerHTML = "";
+    for (let index = 0; index < word.length; index++) {
+        const element = word[index];
+        input.type = "text";
+        input.disabled = true;
+        input.appendChild(input);
+    }
 }
 
+// Handle user input and update game stats
+function handleInput(e) {
+    // Ignore non-letters input and letters that have already guessed
+    const key = e.target.value.toLowerCase();
+    if(key.match(/^[a-z]+$/i) && !incorrectLetters.includes(`${key}`) && !correctLetters.includes(`${key}`)) {
+        // Check if the letter is in word
+        if(word.includes(key)) {
+            // Update correct guess
+            for (let index = 0; index < word.length; index++) {
+                if(word[index] === key) {
+                    input.querySelectorAll("input")[index].value += key;
+                }
+            }
+            correctLetters += key;
+        } else {
+            
+        }
+    }
+}
