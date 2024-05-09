@@ -53,7 +53,12 @@ function handleInput(e) {
             }
             correctLetters += key;
         } else {
-            
+            // Update incorrect guess
+            maxGuesses--;
+            incorrectLetters.push(`${key}`);
+            mistakes.innerText = incorrectLetters;
         }
     }
+
+    
 }
