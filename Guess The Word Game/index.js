@@ -60,5 +60,18 @@ function handleInput(e) {
         }
     }
 
+    // Update remain guess and check for win and lose conditions
+    guessLeft.innerText = maxGuesses;
+    if (correctLetters.length === word.length) {
+        alert(`Congrats! You Found The Word ${word.toUpperCase()}`); 
+        startNewGame();
+    } else if(maxGuesses < 1) {
+        alert("Game Over! You Don't Have Remaining Guesses!");
+        for(let i = 0; i < word.length; i++) {
+            // fill inputs with correct words
+            input.querySelectorAll("input")[i].value = word[i];
+        }
+    }
+
     
 }
