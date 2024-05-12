@@ -3,7 +3,7 @@ const input = document.querySelector(".word"),
     guessLeft = document.querySelector("guess span"),
     mistakes = document.querySelector(".wrong span"),
     resetBtn = document.querySelector(".reset"),
-    hintBtn = document.querySelector("showHint"),
+    hintBtn = document.querySelector(".showHint"),
     hintElement = document.querySelector(".hint"),
     typeInput = document.querySelector(".type-input");
 
