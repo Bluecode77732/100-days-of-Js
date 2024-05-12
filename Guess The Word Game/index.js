@@ -73,5 +73,18 @@ function handleInput(e) {
         }
     }
 
-    
+    // Clear hunt element
+    function showHintElement() {
+        hintElement.style.display = "block";
+        hintElement.style.opacity = "1";
+    }
+
+    // Setup event listeners
+    resetBtn.addEventListener("click", startNewGame);
+    hintBtn.addEventListener("click", showHintElement);
+    typeInput.addEventListener("input", handleInput);
+    input.addEventListener("click", () => typeInput.focus());
+    document.addEventListener("keydown", typeInput.focus());
+
+    startNewGame();
 }
