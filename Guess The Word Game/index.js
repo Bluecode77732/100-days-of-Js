@@ -7,10 +7,10 @@ const input = document.querySelector(".word"),
     hintElement = document.querySelector(".hint"),
     typeInput = document.querySelector(".type-input");
 
-// Initializing game varibles
+// Initializing game variables
 let word, incorrectLetters = [], correctLetters = [], maxGuesses;
 
-// Selecct random word from word list and set up game
+// Select random word from word list and set up game
 function startNewGame() {
     alert("New Game Started. Guess New Word!");
     // Hide hint element
@@ -32,12 +32,12 @@ function startNewGame() {
     input.innerHTML = "";
     for (let index = 0; index < word.length; index++) {
         // debug : const element = word[index];
-        const input = document.createElement("input");
+        const inputs = document.createElement("input");
         
-        input.type = "text";
-        input.disabled = true;
+        inputs.type = "text";
+        inputs.disabled = true;
 
-        input.appendChild(input);
+        input.appendChild(inputs);
     }
 }
 
