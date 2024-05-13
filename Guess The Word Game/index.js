@@ -74,26 +74,26 @@ function handleInput(e) {
     } else if(maxGuesses < 1) {
         alert("Game Over! You Don't Have Remaining Guesses!");
         for(let i = 0; i < word.length; i++) {
-            // fill inputs with correct words
+            // Fill inputs with correct words
             input.querySelectorAll("input")[i].value = word[i];
         }
     }
 
     // Clear input field
     typeInput.value = "";
+} // Debug : '}' THIS END BRACLET MUST BE EXIST HERE!
 
-    // Clear hint element
-    function showHintElement() {
-        hintElement.style.display = "block";
-        hintElement.style.opacity = "1";
-    }
-
-    // Setup event listeners
-    resetBtn.addEventListener("click", startNewGame);
-    hintBtn.addEventListener("click", showHintElement);
-    typeInput.addEventListener("input", handleInput);
-    input.addEventListener("click", () => typeInput.focus());
-    document.addEventListener("keydown", typeInput.focus());
-
-    startNewGame();
+// Show hint element
+function showHintElement() {
+    hintElement.style.display = "block";
+    hintElement.style.opacity = "1";
 }
+
+// Setup event listeners
+resetBtn.addEventListener("click", startNewGame);
+hintBtn.addEventListener("click", showHintElement);
+typeInput.addEventListener("input", handleInput);
+input.addEventListener("click", () => typeInput.focus());
+document.addEventListener("keydown", typeInput.focus());
+
+startNewGame();
