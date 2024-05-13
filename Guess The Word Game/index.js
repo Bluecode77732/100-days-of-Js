@@ -1,6 +1,6 @@
 const input = document.querySelector(".word"),
     hintTag = document.querySelector(".hint span"),
-    guessLeft = document.querySelector("guess span"),
+    guessLeft = document.querySelector(".guess span"),
     mistakes = document.querySelector(".wrong span"),
     resetBtn = document.querySelector(".reset"),
     hintBtn = document.querySelector(".showHint"),
@@ -31,9 +31,12 @@ function startNewGame() {
     // Create input for each letter of word
     input.innerHTML = "";
     for (let index = 0; index < word.length; index++) {
-        const element = word[index];
+        // debug : const element = word[index];
+        const input = document.createElement("input");
+        
         input.type = "text";
         input.disabled = true;
+
         input.appendChild(input);
     }
 }
@@ -43,8 +46,10 @@ function handleInput(e) {
     // Ignore non-letters input and letters that have already guessed
     const key = e.target.value.toLowerCase();
     if(key.match(/^[a-z]+$/i) && !incorrectLetters.includes(`${key}`) && !correctLetters.includes(`${key}`)) {
+        
         // Check if the letter is in word
         if(word.includes(key)) {
+            
             // Update correct guess
             for (let index = 0; index < word.length; index++) {
                 if(word[index] === key) {
@@ -52,6 +57,7 @@ function handleInput(e) {
                 }
             }
             correctLetters += key;
+
         } else {
             // Update incorrect guess
             maxGuesses--;
@@ -73,7 +79,10 @@ function handleInput(e) {
         }
     }
 
-    // Clear hunt element
+    // Clear input field
+    typeInput.value = "";
+
+    // Clear hint element
     function showHintElement() {
         hintElement.style.display = "block";
         hintElement.style.opacity = "1";
