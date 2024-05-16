@@ -36,7 +36,7 @@ body {
     margin: 25px 25px 30px;
 }
 
-.wrapper .word {
+.content .word {
     display: flex;
     flex-wrap: wrap;    /* What's this? */
     justify-content: center;
@@ -65,7 +65,7 @@ body {
     opacity: 0;
 }
 
-.wrod input:first-child {   /* Smth new */
+.word input:first-child {   /* Smth new */
     margin-left: 0;
 }
 
@@ -93,10 +93,10 @@ body {
     font-size: 17px;
     background-color: #1565c0;
     border-radius: 5px;
-    transition: all 0.3s ease
+    transition: all 0.3s ease;
 }
 
-.content .buttons .reset, .content .buttons .showHint {
+.content .buttons .reset:hover, .content .buttons .showHint:hover {
     background-color: #1e88e5;
 }
 
