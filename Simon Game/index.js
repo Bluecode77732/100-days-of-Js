@@ -31,3 +31,30 @@ const delay = async(time) => {
     return await new Promise((resolve) => setTimeout(resolve, time));
 };
 
+// function to generate a random path of colors
+const generateRandomPath = async () => {
+    randomColors.push(getRandomColor(colorObj));
+    score = randomColors.length;
+    isPathGenerating = true;
+    await showPath(randomColors);
+}
+
+// function to show the of colors to players
+const showPath = async (colors) => {
+    scoreEL.innerText = score;
+    // loop through each color in the array
+    for (const color of colors) {   /* of? */
+        const currentColor = document.querySelector(`.${color}`);
+        // pause execution for 500 milliseconds
+        await delay(500);
+        // set background to new color
+        currentColor.style.backgroundColor = colorObj[color].new;
+        await delay(600);
+        // set background to old color
+        currentColor.style.backgroundColor = colorObj[color].current;
+        await delay(700);
+    }
+    // set flag to indicate the game is no longer generating path
+    isPathGenerating = false;
+}
+
