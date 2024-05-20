@@ -58,3 +58,24 @@ const showPath = async (colors) => {
     isPathGenerating = false;
 }
 
+// function to end the game and show final score
+const endGame = () => {
+    resultEl.innerHTML = `<span> Your Score : </span> ${score}`;
+    resultEl.classList.remove("hide");
+    containerEl.classList.remove("hide");
+    wrapperEl.classList.add("hide");
+    startBtn.innerHTML = "Play Again";
+    startBtn.classList.remove("hide");
+}
+
+// function to reset game after ending
+const resetGame = () => {
+    score = 0;
+    clickCount = 0;
+    randomColors = [];
+    isPathGenerating = false;
+    wrapperEl.classList.remove("hide");
+    containerEl.classList.add("hide");
+    generateRandomPath();
+}
+

@@ -26,7 +26,7 @@ body {
 .game {
     height: 500px;
     width: 500px;
-    background-color: #101010;
+    background-color: 7#101010;
     border-radius: 8%;
     position: absolute;
     transform: translate(-50%, -50%);
