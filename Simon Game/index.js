@@ -79,3 +79,15 @@ const resetGame = () => {
     generateRandomPath();
 }
 
+// function to handle a color being clicked
+const handleColorClick = async(e) => {
+    // if the path is currently being generated, ignore click
+    if(isPathGenerating) {
+        return false;
+    }
+    // if clicked color is correct, update score and continue generating the path
+    if(e.target.classList.contains(randomColors[clickCount])) { //Where's the 'target' snippet for parameter 'e'?
+        e.target.style.backgroundColor = colorObj[randomColors[clickCount]].new;
+        
+    }
+}
