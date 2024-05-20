@@ -86,8 +86,8 @@ const handleColorClick = async(e) => {
         return false;
     }
     // if clicked color is correct, update score and continue generating the path
-    if(e.target.classList.contains(randomColors[clickCount])) { //Where's the 'target' snippet for parameter 'e'?
+    if(e.target.classList.contains(randomColors[clickCount])) { //IntelliSense that completes parameter 'e' with 'target' is hard to infer as it's JavaScript's dynamic - Copilot.
         e.target.style.backgroundColor = colorObj[randomColors[clickCount]].new;
-        
+
     }
 }
