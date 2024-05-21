@@ -4,7 +4,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Poppis', sans-serif;
+    font-family: 'Poppins', sans-serif;
 }
 
 body {
@@ -17,7 +17,7 @@ body {
     width: 600px;
     position: absolute;
     /* What was absolute? : independently postioned relative to nearest its ancestor*/
-    transform: translate(-50%, 50%);
+    transform: translate(-50%, -50%);
     top: 50%;
     left: 50%;
     border-radius: 8px;
@@ -26,7 +26,7 @@ body {
 .game {
     height: 500px;
     width: 500px;
-    background-color: 7#101010;
+    background-color: #101010;
     border-radius: 8%;
     position: absolute;
     transform: translate(-50%, -50%);
@@ -52,20 +52,20 @@ body {
     background-color: #800000;
     border-radius: 0px 10px 0px 0;
     top: 30px;
-    left: 30px;
+    right: 30px;
 }
 
 .color3 {
     background-color: #00008b;
-    border-radius: 0px 10px 0px 0;
-    top: 30px;
-    left: 30px;
+    border-radius: 0px 0px 10px 0;
+    bottom: 30px;
+    right: 30px;
 }
 
 .color4 {
     background-color: #808000;
-    border-radius: 0px 10px 0px 0;
-    top: 30px;
+    border-radius: 0px 0px 0px 10px;
+    bottom: 30px;
     left: 30px;
 }
 
