@@ -88,6 +88,19 @@ const handleColorClick = async(e) => {
     // if clicked color is correct, update score and continue generating the path
     if(e.target.classList.contains(randomColors[clickCount])) { //IntelliSense that completes parameter 'e' with 'target' is hard to infer as it's JavaScript's dynamic - Copilot.
         e.target.style.backgroundColor = colorObj[randomColors[clickCount]].new;
-
+        await delay(500);
+        e.target.style.backgroundColor = colorObj[randomColors[clickCount]].current;
+        clickCount++;
+        if(clickCount === score) {
+            clickCount = 0;
+            generateRandomPath();
+        }
+        // if the clicked color is incorrect, end game
+    } else {
+        endGame();
     }
-}
+};
+
+// Event Listener 
+startBtn.addEventListener("click", resetGame);
+colorParts.forEach((color) => color.addEventListener("click", handleColorClick))
