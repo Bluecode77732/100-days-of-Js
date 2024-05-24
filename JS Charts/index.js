@@ -38,3 +38,4 @@ const chartOptions = {
 };
 
 // Create new ApexCharts
+const chart = new ApexCharts(document.querySelector(''))
