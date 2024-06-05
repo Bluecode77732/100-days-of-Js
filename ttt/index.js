@@ -1,5 +1,5 @@
 const cells = document.querySelectorAll('.cell');   // It selects all matching specific elements from style file
-const message = document.getElementById('message');   //
+const message = document.getElementById('message');   // It gets all matching specific element by id
 const resetButton = document.getElementById('resetButton');
 
 let currentPlayer = 'X';
