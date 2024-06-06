@@ -76,7 +76,7 @@ body {
         scale: 0;
         opacity: 0.8;
     } 100% {
-        scale: 0;
+        scale: 3;
         opacity: 0;
     } 
 }
