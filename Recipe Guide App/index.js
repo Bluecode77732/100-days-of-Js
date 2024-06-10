@@ -23,6 +23,14 @@ function searchMeal() {
         resultContainer.innerHTML = `<h3>Input Field Cannot be Empty`;
         return;
     }
-
+    // Fetch meal data using API with user input
+    fetch(apiUrl + userInput).then(response => response.json()).then(data => {
+        const meal = data.meals[0];
+        // Handle where no meal found
+        if(!meal) {
+            resultContainer.innerHTML = `<h3>No Meal Found, Please Try Again.</h3>`;
+            return;
+        }
+    })
     
 }
