@@ -4,7 +4,7 @@ const searchInput = document.getElementById('search-input');    /* <input type="
 const searchContainer = document.querySelector('.search-box');  /* <div class="search-box"> */
 
 // API url to fetch meal data
-const apiUrl = "";
+const apiUrl = "www.themealdb.com/api/json/v1/1/random.php?s=";
 
 // Event listeners for search and input (when press enter)
 searchBtn.addEventListener("click", );
@@ -31,6 +31,26 @@ function searchMeal() {
             resultContainer.innerHTML = `<h3>No Meal Found, Please Try Again.</h3>`;
             return;
         }
-    })
-    
-}
+        const ingredients = getI(meal);
+        // Generate Html to display meal data
+        const recipeHtml = `
+            <div class="details">
+                <h2>${meal.strMeal}</h2>
+                <h4>${meal.strArea}</h4>
+            </div>
+            <img src=${meal.strMealThumb}/>
+            <div id="ingre-container">
+                <h3>Ingredients: </h3>
+                <ul>${ingredients}</ul>
+            </div>
+            <div id="recipe">
+                <button id="hide-recipe">X</button>
+                <pre id="instructions">${meal.strInstructions}</pre>
+                </div>
+            <button id="show-recipe">View Recipe</button>
+        `;
+        resultContainer.innerHTML = recipeHtml;
+
+        
+    });  
+};
