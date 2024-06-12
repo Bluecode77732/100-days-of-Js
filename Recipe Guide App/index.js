@@ -6,6 +6,9 @@ const searchContainer = document.querySelector('.search-box');  /* <div class="s
 // API url to fetch meal data
 const apiUrl = "www.themealdb.com/api/json/v1/1/random.php?s=";
 
+// Event listeners for search and input (when press enter)
+searchBtn.addEventListener("click", searchMeal)
+
 // Handle meal function
 
 function searchMeal() {
@@ -20,7 +23,7 @@ function searchMeal() {
 
 // Generate HTML for list of ingredients
 
-function getIngredients(meal) {
+function getIngredients(meal) { /" 3rd fn "/
     let ingredientsHTML = "";
     // There can be maximum of 20 ingredients
     for (let i = 0; i <= 20; i++) {
