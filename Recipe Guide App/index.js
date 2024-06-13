@@ -7,7 +7,13 @@ const searchContainer = document.querySelector('.search-box');  /* <div class="s
 const apiUrl = "www.themealdb.com/api/json/v1/1/random.php?s=";
 
 // Event listeners for search and input (when press enter)
-searchBtn.addEventListener("click", searchMeal)
+searchBtn.addEventListener("click", searchMeal);
+searchInput.addEventListener("keydown", function(e) {
+    if(e.keyCode === 13) {
+        e.preventDefault();
+        searchMeal();
+    }
+});
 
 // Handle meal function
 
