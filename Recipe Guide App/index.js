@@ -4,7 +4,7 @@ const searchInput = document.getElementById('search-input');    /* <input type="
 const searchContainer = document.querySelector('.search-box');  /* <div class="search-box"> */
 
 // API url to fetch meal data
-const apiUrl = "www.themealdb.com/api/json/v1/1/random.php?s=";
+const apiUrl = "https://www.themealdb.com/api/json/v1/1/search.php?s="; /* the apiUrl must contain 'https://' in "www.themealdb.com/api/json/v1/1/random.php?s=" */
 
 // Event listeners for search and input (when press enter)
 searchBtn.addEventListener("click", searchMeal);
