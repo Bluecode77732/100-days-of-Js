@@ -14,7 +14,7 @@ body {
     background-color: #1e293b;
     padding: 35px 20px 38px;
     width: 90cqw;
-    min-width: 512px;
+    max-width: 512px;
     position: absolute;
     transform: translate(-50%, -50%);
     top: 50%;
@@ -45,7 +45,7 @@ body {
     font-weight: 500;
     border-radius: 20px;
     cursor: pointer;
-    transition: all 0.s ease;
+    transition: all 0.3s ease;
 }
 
 img {
