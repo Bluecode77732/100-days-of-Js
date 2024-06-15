@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: #1a212d;
+    color: #fff;
+    height: 100vh;
+    display: flex;
+    align-items: center;    /* height - from 'top' to 'bottom' */
+    justify-content: center;    /* width - from 'left' to 'right' */
+}
+
+.container {
+    padding: 30px 22px;
+    width: 42rem;
+}
+
+.container h1{
+    margin-bottom: 10px;
+    text-align: center;
+    font-weight: 100;
+}
+
+.searchBox {
+    background-color: #161922;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    border: 0.1px solid #999;
+    border-radius: 6px;
+}
+
+.searchBox input {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    width: 80%;
+    color: #fff;
+    font-size: 15px;
+}
+
+.searchBox button {
+    background-color: #675afe;
+    color: #fff;
+    padding: 5px 10px;
+    border: none;
+    outline: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.searchBox button:hover {
+    background-color: #1e0bee;  /* I guess I have finally found out what the 'hover' is, or understood once again */
+}
+
+.details {
+    margin-top: 20px;
+    
+}
