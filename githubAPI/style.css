@@ -63,5 +63,15 @@ body {
 
 .details {
     margin-top: 20px;
-    
+    background-color: #161922;
+    padding: 20px 25px;
+    border: 1px solid #000;
+    bottom: 1px solid #999;
+    border-radius: 6px;
+    display: none;
 }
+
+/* .profile {
+    display: flex;
+}
+ */
