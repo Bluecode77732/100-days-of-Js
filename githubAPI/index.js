@@ -1,6 +1,6 @@
 const searchGithub = async () => {
     const username = document.getElementById("searchInput").value;
-    const response = await fetch(`https://api.github.com/users/${}{username}`);
+    const response = await fetch(`https://api.github.com/users/${username}`);
     const detailsContainer = document.querySelector(".details");
     const data = await response.json();
 
@@ -14,7 +14,7 @@ const searchGithub = async () => {
             <div class="profile-details">
                 <h2 class="name">${data.name || data.login}</h2>
                 <p class="username">@${data.login}</p>
-                <p class="bio">${data.bio || "The account doesn't have bio."}</p> /* Using "" is pretty clever idea when there's no $ */
+                <p class="bio">${data.bio || "The account doesn't have bio."}
 
                 <div class="stats">
                     <div>
