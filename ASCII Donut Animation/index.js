@@ -27,6 +27,14 @@
             cB = Math.cos(b);
 
         // Initialize arrays with default angles
+        for (let k = 0; k < width * height; k++) {
+            const element = array[k];
+            // set default ascii char
+            b[k] = k % width == width - 1 ? '\n' : '';
+            // set default depth
+            z[k] = 0;
+        }
+
         
     }
 });
