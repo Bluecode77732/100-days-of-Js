@@ -21,10 +21,10 @@
         A += 0.07;   // Increament angle a 
         B += 0.07;   // Increament angle b 
         // Sin and Cosine of angles
-        let sA = Math.cos(A),
-            cA = Math.cos(A),
-            sB = Math.cos(b),
-            cB = Math.cos(b);
+        let sinA = Math.cos(A),
+            cosA = Math.cos(A),
+            sinB = Math.cos(b),
+            cosB = Math.cos(b);
 
         // Initialize arrays with default angles
         for (let k = 0; k < width * height; k++) {
@@ -34,7 +34,23 @@
             // set default depth
             z[k] = 0;
         }
-
-        
+        // Generate the ASCCI frame
+        for (let i = 0; i < 6.28; i += 0.07) {
+            let cosineI = Math.cos(i);
+            let sineI = Math.sin(i);
+   
+            for (let j = 0; j < 6.28; j += 0.02) {
+                let sineJ = Math.sin(j);
+                cosineJ = Math.cos(j),
+                    // Height calculation
+                    height = cosinePoint + 2,  
+                    // Distance calculation
+                    D = 1 / (sineI * height * sinA + sineI * cosA + 5),
+                    // Temporary variable
+                    t = sineJ * height * cosA - sineI * sinA;
+                
+                // 
+            }
+        }
     }
 });
