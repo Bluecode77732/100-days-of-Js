@@ -34,23 +34,47 @@
             // set default depth
             z[k] = 0;
         }
+
         // Generate the ASCCI frame
         for (let i = 0; i < 6.28; i += 0.07) {
             let cosineI = Math.cos(i);
             let sineI = Math.sin(i);
    
-            for (let j = 0; j < 6.28; j += 0.02) {
-                let sineJ = Math.sin(j);
-                cosineJ = Math.cos(j),
+            for (var j = 0; j < 6.28; j += 0.02) {
+                var sineJ = Math.sin(j);
+                let cosineJ = Math.cos(j),
                     // Height calculation
                     height = cosinePoint + 2,  
                     // Distance calculation
                     D = 1 / (sineI * height * sinA + sineI * cosA + 5),
                     // Temporary variable
-                    t = sineJ * height * cosA - sineI * sinA;
+                    temp = sineJ * height * cosA - sineI * sinA;
                 
-                // 
+            // Calculate cordinates of ASCII char
+            let x = Math.floor(width / 2 + (width / 4) * D * (cp * h * cosB - temp * sinB));
+            let y = Math.floor(height / 2 + (height / 4) * D * (cp * h * sinB - temp * cosB));
+
+            // Calculate the index in the array
+            let o = x + width * y;
+            // Calculate the index in the array
+            let N = Math.floor(8 * ((sineJ * sinA - sineJ * cosineI * cosA) * cosB - sineJ * cosineI * sinA - sineI * cosA - cosineJ * cosineI * sinB));
+
+            // Update ASCII char and depth if conditions are met
+            if (y < height && y >= 0 && x >= 0 && x < width && D > z[o]) {
+                z[o] = D;
+                // Update ASCII char based on the index
+                b[o] = '.,-~:;=!*#$@'[N > 0 ? N : 0];
+            }
             }
         }
+
+        // Update html element with the ASCII frame
+        preTag.innerHTML = b.join('');
+    }
+
+    // Function to start the animation
+    function StartAsciiAnimation() {
+        // Start it by calling renderAsciiAnimation every 50ms
+        window
     }
 });
