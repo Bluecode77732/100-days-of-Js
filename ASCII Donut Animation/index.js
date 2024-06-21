@@ -90,4 +90,4 @@
 
     // Add event listener to update ASCII frame when window resized
     window.addEventListener('resize', renderAscii);
-});
+})();
