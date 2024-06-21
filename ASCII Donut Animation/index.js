@@ -75,6 +75,19 @@
     // Function to start the animation
     function StartAsciiAnimation() {
         // Start it by calling renderAsciiAnimation every 50ms
-        window
+        window.asciiIntervalID = setInterval(renderAscii, 50);
     }
+    
+    renderAscii();  //Initiate Ascii frame
+    // Add event listener to start animation when page is loaded
+    if (document.all) {
+        // For older versions of internet explorer
+        window.attachEvent('onload', StartAsciiAnimation);
+    } else {
+        // For modern browser
+        window.addEventListener('load', StartAsciiAnimation, false);
+    }
+
+    // Add event listener to update ASCII frame when window resized
+    window.addEventListener('resize', renderAscii);
 });
