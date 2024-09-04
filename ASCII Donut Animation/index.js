@@ -47,11 +47,11 @@
                     // Distance calculation
                     D = 1 / (sineI * height * sinA + sineI * cosA + 5),
                     // Temporary variable
-                    temp = sineJ * height * cosA - sineI * sinA;
-                
+                    t = sineJ * height * cosA - sineI * sinA;
+                    
             // Calculate cordinates of ASCII char
-            let x = Math.floor(width / 2 + (width / 4) * D * (cp * h * cosB - temp * sinB));
-            let y = Math.floor(height / 2 + (height / 4) * D * (cp * h * sinB - temp * cosB));
+            let x = Math.floor(width / 2 + (width / 4) * D * (cp * h * cosB - t * sinB));
+            let y = Math.floor(height / 2 + (height / 4) * D * (cp * h * sinB - t * cosB));
 
             // Calculate the index in the array
             let o = x + width * y;
