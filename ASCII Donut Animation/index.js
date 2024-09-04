@@ -21,9 +21,9 @@
         A += 0.07;   // Increament angle a 
         B += 0.07;   // Increament angle b 
         // Sin and Cosine of angles
-        let sinA = Math.cos(A),
+        let sinA = Math.sin(A),
             cosA = Math.cos(A),
-            sinB = Math.cos(b),
+            sinB = Math.sin(b),
             cosB = Math.cos(b);
 
         // Initialize arrays with default angles
@@ -39,8 +39,8 @@
             let cosineI = Math.cos(i);
             let sineI = Math.sin(i);
    
-            for (var j = 0; j < 6.28; j += 0.02) {
-                var sineJ = Math.sin(j);
+            for (let j = 0; j < 6.28; j += 0.07) {
+                let sineJ = Math.sin(j);
                 let cosineJ = Math.cos(j),
                     // Height calculation
                     height = cosinePoint + 2,  
@@ -81,7 +81,7 @@
     // Add event listener to start animation when page is loaded
     if (document.all) {
         // For older versions of internet explorer
-        window.attachEvent('onload', StartAsciiAnimation);
+    window.attachEvent('onload', StartAsciiAnimation);
     } else {
         // For modern browser
         window.addEventListener('load', StartAsciiAnimation, false);
